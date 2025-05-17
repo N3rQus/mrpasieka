@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="header">
+    <header class="header">
         <div class="container">
             <h1>Pasieka MrPasieka</h1>
             <nav>
-                <ul>
+                <ul class="nav-list">
                     <li><a href="#about">O nas</a></li>
                     <li><a href="#products">Produkty</a></li>
                     <li><a href="#gallery">Galeria</a></li>
@@ -22,57 +22,73 @@
         </div>
     </header>
 
-    <main>
-        <section id="hero">
-            <div class="hero-text">
-                <h2>Naturalny miód z serca natury</h2>
-                <p>Rodzinna pasieka z tradycją. 100% naturalny produkt prosto od pszczół.</p>
-            </div>
-        </section>
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h2>Naturalny miód z serca natury</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae lacus eget enim fermentum hendrerit.</p>
+        </div>
+    </section>
 
-        <section id="about">
+    <section class="section" id="about">
+        <div class="container">
             <h2>O nas</h2>
-        </section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod justo nec elit suscipit, vitae cursus nunc eleifend.</p>
+        </div>
+    </section>
 
-        <section id="products">
-            <h2>Nasze miody</h2>
-            <div class="product-list">
+    <section class="section" id="products">
+        <div class="container">
+            <h2>Nasze produkty</h2>
+            <div class="products">
                 <div class="product">
-                    <img src="images/honey-jar.png" alt="Miód wielokwiatowy">
-                    <h3>Miód wielokwiatowy</h3>
-                    <p>Słodki i delikatny – idealny do herbaty i wypieków.</p>
+                    <img src="images/miod1.jpg" alt="Miód 1">
+                    <h3>Miód Wielokwiatowy</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
                 <div class="product">
-                    <img src="images/honey-jar.png" alt="Miód lipowy">
-                    <h3>Miód lipowy</h3>
-                    <p>Charakterystyczny smak i właściwości wspomagające odporność.</p>
+                    <img src="images/miod2.jpg" alt="Miód 2">
+                    <h3>Miód Lipowy</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="product">
+                    <img src="images/miod3.jpg" alt="Miód 3">
+                    <h3>Miód Akacjowy</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="gallery">
+    <section class="section" id="gallery">
+        <div class="container">
             <h2>Galeria</h2>
-            <div class="gallery-grid">
-                <!-- Wstaw tu własne zdjęcia jako <img src="images/xyz.jpg"> -->
+            <div class="gallery">
+                <img src="images/galeria1.jpg" alt="Galeria 1">
+                <img src="images/galeria2.jpg" alt="Galeria 2">
+                <img src="images/galeria3.jpg" alt="Galeria 3">
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact">
+    <section class="section" id="contact">
+        <div class="container">
             <h2>Kontakt</h2>
-            <p>Masz pytania lub chcesz zamówić miód? Skontaktuj się z nami!</p>
-            <form id="contact-form">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel semper leo.</p>
+            <form class="contact-form">
                 <input type="text" placeholder="Imię" required>
                 <input type="email" placeholder="Email" required>
                 <textarea placeholder="Wiadomość" required></textarea>
                 <button type="submit">Wyślij</button>
             </form>
             <p><strong>Telefon:</strong> 123 456 789<br><strong>Email:</strong> kontakt@mrpasieka.pl</p>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Pasieka MrPasieka. Wszelkie prawa zastrzeżone.</p>
-        <button id="backToTop">Powrót do góry</button>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Pasieka MrPasieka. Wszelkie prawa zastrzeżone.</p>
+            <button id="backToTop">Powrót do góry</button>
+        </div>
     </footer>
 
     <script src="script.js"></script>
