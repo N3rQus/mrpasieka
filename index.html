@@ -5,111 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pasieka MrPasieka</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html, body {
-            height: 100%;
-            width: 100%;
-        }
-
-        body {
-            font-family: 'Raleway', sans-serif;
-            background: linear-gradient(135deg, #fff7e6, #fffaf0);
-            color: #333;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            background-color: #f4a261;
-            padding: 2rem 1rem;
-            text-align: center;
-            color: white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-        }
-
-        main {
-            flex: 1;
-            padding: 2rem;
-            width: 100%;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .jar {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .jar img {
-            max-width: 250px;
-            transition: transform 0.3s ease;
-        }
-
-        .jar img:hover {
-            transform: scale(1.1);
-        }
-
-        h2 {
-            color: #d68c00;
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        footer {
-            background-color: #f4a261;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .jar img {
-                max-width: 180px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Pasieka MrPasieka</h1>
-    </header>
-    <main>
-        <div class="jar">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Honey_jar.svg/240px-Honey_jar.svg.png" alt="Słoik miodu">
+    <header id="header">
+        <div class="container">
+            <h1>Pasieka MrPasieka</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">O nas</a></li>
+                    <li><a href="#products">Produkty</a></li>
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
         </div>
-        <h2>Miód Wielokwiatowy</h2>
-        <p>Naturalny miód z naszej rodzinnej pasieki.<br>Zbierany w czystym regionie, bez dodatków i filtrów.<br>100% natura prosto do Twojego słoika.</p>
-        <p><strong>Kontakt:</strong><br>
-        Tel: 123 456 789<br>
-        Email: kontakt@mrpasieka.pl</p>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-text">
+                <h2>Naturalny miód z serca natury</h2>
+                <p>Rodzinna pasieka z tradycją. 100% naturalny produkt prosto od pszczół.</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>O nas</h2>
+        </section>
+
+        <section id="products">
+            <h2>Nasze miody</h2>
+            <div class="product-list">
+                <div class="product">
+                    <img src="images/honey-jar.png" alt="Miód wielokwiatowy">
+                    <h3>Miód wielokwiatowy</h3>
+                    <p>Słodki i delikatny – idealny do herbaty i wypieków.</p>
+                </div>
+                <div class="product">
+                    <img src="images/honey-jar.png" alt="Miód lipowy">
+                    <h3>Miód lipowy</h3>
+                    <p>Charakterystyczny smak i właściwości wspomagające odporność.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h2>Galeria</h2>
+            <div class="gallery-grid">
+                <!-- Wstaw tu własne zdjęcia jako <img src="images/xyz.jpg"> -->
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Kontakt</h2>
+            <p>Masz pytania lub chcesz zamówić miód? Skontaktuj się z nami!</p>
+            <form id="contact-form">
+                <input type="text" placeholder="Imię" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Wiadomość" required></textarea>
+                <button type="submit">Wyślij</button>
+            </form>
+            <p><strong>Telefon:</strong> 123 456 789<br><strong>Email:</strong> kontakt@mrpasieka.pl</p>
+        </section>
     </main>
+
     <footer>
-        &copy; 2025 Pasieka MrPasieka
+        <p>&copy; 2025 Pasieka MrPasieka. Wszelkie prawa zastrzeżone.</p>
+        <button id="backToTop">Powrót do góry</button>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
