@@ -438,34 +438,57 @@ h2 {
 #contact h2 {
     text-align: center;
 }
+.contact-flex {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.contact-form {
+    flex: 1 1 320px;
+    min-width: 260px;
+}
 .contact-details {
+    flex: 0 0 220px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 14px;
+    padding: 1.2rem 1.5rem;
+    margin-top: 0;
+    box-shadow: 0 2px 16px rgba(230,201,122,0.08);
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
+    gap: 1.1rem;
     align-items: flex-start;
-    margin-top: 1.2rem;
-    font-size: 1.13rem;
 }
-
 .contact-row {
     display: flex;
     align-items: center;
     gap: 0.7rem;
 }
-
 .contact-icon {
     font-size: 1.3em;
     color: var(--gold);
 }
-
 .contact-details a {
     color: var(--white);
     text-decoration: none;
     transition: color 0.2s;
     font-weight: 500;
 }
-
 .contact-details a:hover {
     color: var(--gold);
     text-decoration: underline;
+}
+@media (max-width: 700px) {
+    .contact-flex {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: stretch;
+    }
+    .contact-details {
+        padding: 1rem 1.2rem;
+        align-items: flex-start;
+    }
 }
