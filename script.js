@@ -9,11 +9,13 @@ function revealOnScroll() {
     });
 }
 
-// Uruchom na starcie i przy scrollu
 window.addEventListener('DOMContentLoaded', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
 window.addEventListener('scroll', revealOnScroll);
 
-// Przycisk do góry
-document.getElementById('backToTop').addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+const backToTop = document.getElementById('backToTop');
+if (backToTop) {
+    backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
