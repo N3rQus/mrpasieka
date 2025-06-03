@@ -8,6 +8,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- ANIMOWANY WZÓR W TLE -->
+    <div class="bg-pattern">
+        <svg width="100%" height="100%">
+            <defs>
+                <linearGradient id="gold-gradient" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#e6c97a" />
+                    <stop offset="100%" stop-color="#bfa14a" />
+                </linearGradient>
+            </defs>
+            <circle class="pattern-circle" cx="10%" cy="20%" r="120" fill="url(#gold-gradient)" opacity="0.08"/>
+            <circle class="pattern-circle" cx="80%" cy="80%" r="180" fill="url(#gold-gradient)" opacity="0.07"/>
+            <rect class="pattern-rect" x="60%" y="10%" width="200" height="200" rx="60" fill="url(#gold-gradient)" opacity="0.04"/>
+        </svg>
+    </div>
+
     <header class="header glass">
         <div class="container nav-container">
             <h1 class="logo">MrPasieka</h1>
@@ -23,7 +38,9 @@
     </header>
 
     <main>
-        <section class="hero glass">
+        <!-- HERO Z DUŻYM ZDJĘCIEM -->
+        <section class="hero glass reveal">
+            <img class="hero-bg" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Pasieka" />
             <div class="container hero-content">
                 <h2>Naturalny miód z przyszłości</h2>
                 <p>Pasieka rodzinna, tradycja i technologia. Najwyższa jakość prosto z ula do Twojego domu.</p>
@@ -31,7 +48,7 @@
             </div>
         </section>
 
-        <section class="section glass" id="about">
+        <section class="section glass reveal" id="about">
             <div class="container">
                 <h2>O nas</h2>
                 <p>
@@ -40,22 +57,22 @@
             </div>
         </section>
 
-        <section class="section glass" id="products">
+        <section class="section glass reveal" id="products">
             <div class="container">
                 <h2>Nasze produkty</h2>
                 <div class="products">
                     <div class="product">
-                        <img src="images/miod1.jpg" alt="Miód Wielokwiatowy">
+                        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Miód Wielokwiatowy">
                         <h3>Miód Wielokwiatowy</h3>
                         <p>Delikatny, kwiatowy aromat. Idealny do codziennego spożycia i wzmacniania odporności.</p>
                     </div>
                     <div class="product">
-                        <img src="images/miod2.jpg" alt="Miód Lipowy">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Miód Lipowy">
                         <h3>Miód Lipowy</h3>
                         <p>Wyrazisty smak i naturalne wsparcie przy przeziębieniach. Złoto polskich lip.</p>
                     </div>
                     <div class="product">
-                        <img src="images/miod3.jpg" alt="Miód Akacjowy">
+                        <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Miód Akacjowy">
                         <h3>Miód Akacjowy</h3>
                         <p>Jasny, łagodny, długo płynny. Ulubiony przez dzieci i dorosłych.</p>
                     </div>
@@ -63,18 +80,19 @@
             </div>
         </section>
 
-        <section class="section glass" id="gallery">
+        <section class="section glass reveal" id="gallery">
             <div class="container">
                 <h2>Galeria</h2>
                 <div class="gallery">
-                    <img src="images/galeria1.jpg" alt="Pasieka wśród kwiatów">
-                    <img src="images/galeria2.jpg" alt="Pszczoły przy pracy">
-                    <img src="images/galeria3.jpg" alt="Słoiki z miodem">
+                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Pasieka wśród kwiatów">
+                    <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3c8b?auto=format&fit=crop&w=400&q=80" alt="Pszczoły przy pracy">
+                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Słoiki z miodem">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Ule w słońcu">
                 </div>
             </div>
         </section>
 
-        <section class="section glass" id="contact">
+        <section class="section glass reveal" id="contact">
             <div class="container">
                 <h2>Kontakt</h2>
                 <p>Masz pytania lub chcesz zamówić miód? Napisz do nas!</p>
@@ -92,7 +110,7 @@
         </section>
     </main>
 
-    <footer class="footer glass">
+    <footer class="footer glass reveal">
         <div class="footer-container">
             <p>&copy; 2050 MrPasieka</p>
             <ul class="footer-links">
