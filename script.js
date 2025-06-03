@@ -1,4 +1,3 @@
-// Scroll reveal animacja
 function revealOnScroll() {
     const reveals = document.querySelectorAll('.reveal');
     const windowHeight = window.innerHeight;
@@ -9,8 +8,10 @@ function revealOnScroll() {
         }
     });
 }
-window.addEventListener('scroll', revealOnScroll);
+
+// Uruchom na starcie i przy scrollu
 window.addEventListener('DOMContentLoaded', revealOnScroll);
+window.addEventListener('scroll', revealOnScroll);
 
 // Przycisk do góry
 document.getElementById('backToTop').addEventListener('click', function() {
