@@ -438,3 +438,34 @@ h2 {
 #contact h2 {
     text-align: center;
 }
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: flex-start;
+    margin-top: 1.2rem;
+    font-size: 1.13rem;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.contact-icon {
+    font-size: 1.3em;
+    color: var(--gold);
+}
+
+.contact-details a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 500;
+}
+
+.contact-details a:hover {
+    color: var(--gold);
+    text-decoration: underline;
+}
