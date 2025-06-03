@@ -1,11 +1,11 @@
 :root {
-    --gold: #ffd700;
-    --gold-glow: #fffbe6;
-    --dark: #181818;
-    --glass-bg: rgba(30, 30, 30, 0.65);
-    --glass-border: rgba(255, 215, 0, 0.18);
-    --white: #fff;
-    --accent: #ffb300;
+    --gold: #e6c97a;
+    --gold-light: #fffbe6;
+    --dark: #18191f;
+    --glass-bg: rgba(32, 34, 40, 0.82);
+    --glass-border: rgba(230, 201, 122, 0.13);
+    --white: #f7f7f7;
+    --accent: #bfa14a;
     --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
 }
 
@@ -14,7 +14,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', Arial, sans-serif;
-    background: linear-gradient(120deg, #181818 0%, #232323 100%);
+    background: linear-gradient(135deg, #23242a 0%, #18191f 100%);
     color: var(--white);
     scroll-behavior: smooth;
 }
@@ -24,8 +24,8 @@ html, body {
     border-radius: 22px;
     box-shadow: var(--shadow);
     border: 1.5px solid var(--glass-border);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .header {
@@ -34,14 +34,16 @@ html, body {
     z-index: 100;
     padding: 0.5rem 0;
     margin-bottom: 1.5rem;
+    background: rgba(24, 25, 31, 0.92);
+    box-shadow: 0 2px 24px 0 rgba(0,0,0,0.12);
 }
 
 .logo {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: var(--gold);
     letter-spacing: 2px;
-    text-shadow: 0 0 12px var(--gold-glow);
+    text-shadow: 0 0 10px var(--gold-light);
     transition: text-shadow 0.3s;
 }
 
@@ -71,7 +73,9 @@ html, body {
     font-size: 1.1rem;
     letter-spacing: 1px;
     position: relative;
-    transition: color 0.2s;
+    padding: 0.3rem 0.7rem;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
 }
 
 .navbar a::after {
@@ -87,11 +91,12 @@ html, body {
     bottom: -5px;
 }
 
-.navbar a:hover {
+.navbar a:hover, .navbar a:focus {
     color: var(--gold);
+    background: rgba(230,201,122,0.07);
 }
 
-.navbar a:hover::after {
+.navbar a:hover::after, .navbar a:focus::after {
     width: 100%;
 }
 
@@ -99,7 +104,7 @@ html, body {
     margin: 2rem auto 2.5rem auto;
     padding: 4rem 0 3rem 0;
     text-align: center;
-    background: linear-gradient(120deg, rgba(255,215,0,0.07) 0%, rgba(24,24,24,0.7) 100%);
+    background: linear-gradient(120deg, rgba(230,201,122,0.04) 0%, rgba(24,25,31,0.7) 100%);
 }
 
 .hero-content h2 {
@@ -107,12 +112,12 @@ html, body {
     color: var(--gold);
     margin-bottom: 1.2rem;
     letter-spacing: 2px;
-    text-shadow: 0 0 18px var(--gold-glow);
+    text-shadow: 0 0 18px var(--gold-light);
 }
 
 .hero-content p {
     font-size: 1.25rem;
-    color: #e0e0e0;
+    color: #d6d6d6;
     margin-bottom: 2rem;
 }
 
@@ -124,7 +129,7 @@ html, body {
     padding: 0.9rem 2.5rem;
     border: none;
     border-radius: 12px;
-    box-shadow: 0 2px 16px var(--gold-glow);
+    box-shadow: 0 2px 16px var(--gold-light);
     cursor: pointer;
     transition: background 0.2s, color 0.2s, transform 0.2s;
     text-decoration: none;
@@ -152,7 +157,7 @@ h2 {
     color: var(--gold);
     margin-bottom: 1.5rem;
     letter-spacing: 1px;
-    text-shadow: 0 0 8px var(--gold-glow);
+    text-shadow: 0 0 8px var(--gold-light);
 }
 
 .products {
@@ -163,13 +168,13 @@ h2 {
 }
 
 .product {
-    background: rgba(255,255,255,0.03);
+    background: rgba(255,255,255,0.02);
     border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(255,215,0,0.10);
+    box-shadow: 0 4px 24px rgba(230,201,122,0.10);
     padding: 1.5rem 1.2rem 1.2rem 1.2rem;
     width: 300px;
     text-align: center;
-    transition: transform 0.25s, box-shadow 0.25s;
+    transition: transform 0.25s, box-shadow 0.25s, border 0.25s;
     position: relative;
     overflow: hidden;
     border: 1.5px solid var(--glass-border);
@@ -178,7 +183,7 @@ h2 {
 
 .product:hover {
     transform: translateY(-10px) scale(1.04);
-    box-shadow: 0 8px 32px var(--gold-glow);
+    box-shadow: 0 8px 32px var(--gold-light);
     border-color: var(--gold);
 }
 
@@ -187,7 +192,7 @@ h2 {
     border-radius: 12px;
     margin-bottom: 1rem;
     transition: transform 0.3s;
-    box-shadow: 0 2px 16px rgba(255,215,0,0.08);
+    box-shadow: 0 2px 16px rgba(230,201,122,0.08);
 }
 
 .product:hover img {
@@ -202,7 +207,7 @@ h2 {
 }
 
 .product p {
-    color: #e0e0e0;
+    color: #d6d6d6;
     font-size: 1rem;
 }
 
@@ -216,7 +221,7 @@ h2 {
 .gallery img {
     width: 250px;
     border-radius: 14px;
-    box-shadow: 0 2px 16px rgba(255,215,0,0.10);
+    box-shadow: 0 2px 16px rgba(230,201,122,0.10);
     transition: transform 0.3s, box-shadow 0.3s;
     border: 1.5px solid var(--glass-border);
     background: rgba(255,255,255,0.03);
@@ -224,7 +229,7 @@ h2 {
 
 .gallery img:hover {
     transform: scale(1.09) rotate(2deg);
-    box-shadow: 0 8px 32px var(--gold-glow);
+    box-shadow: 0 8px 32px var(--gold-light);
     border-color: var(--gold);
 }
 
@@ -263,7 +268,7 @@ h2 {
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 2px 8px var(--gold-glow);
+    box-shadow: 0 2px 8px var(--gold-light);
     transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
@@ -275,13 +280,15 @@ h2 {
 
 .contact-details {
     font-size: 1.1rem;
-    color: #e0e0e0;
+    color: #d6d6d6;
 }
 
 .footer {
     padding: 2rem 0 1rem 0;
     margin-top: 2rem;
     border-top: 1.5px solid var(--glass-border);
+    background: rgba(24, 25, 31, 0.92);
+    box-shadow: 0 -2px 24px 0 rgba(0,0,0,0.12);
 }
 
 .footer-container {
@@ -317,7 +324,7 @@ h2 {
     height: 48px;
     font-size: 1.7rem;
     cursor: pointer;
-    box-shadow: 0 2px 8px var(--gold-glow);
+    box-shadow: 0 2px 8px var(--gold-light);
     transition: background 0.2s, color 0.2s, transform 0.2s;
     margin-top: 0.5rem;
 }
