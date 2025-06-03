@@ -268,9 +268,6 @@ h2 {
     color: #d6d6d6;
     font-size: 1rem;
 }
-#products h2 {
-    text-align: center;
-}
 
 .gallery {
     display: flex;
@@ -435,4 +432,9 @@ h2 {
     .hero {
         min-height: 180px;
     }
+}
+#products h2,
+#gallery h2,
+#contact h2 {
+    text-align: center;
 }
