@@ -3,119 +3,541 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pasieka</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>BoxPoint – Nowoczesne skrytki paczkowe</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, rgba(35,37,38,0.88) 0%, rgba(65,67,69,0.88) 100%), url('{{ asset('images/home2.jpg') }}');
+            background-size: cover;
+            background-position: center 0px;
+            background-repeat: no-repeat;
+            font-family: 'Inter', Arial, sans-serif;
+            color: #fff;
+            margin: 0;
+            min-height: 100vh;
+        }
+        .avatar-circle {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #f0a500;
+            background: #fff;
+            transition: box-shadow 0.2s;
+            box-shadow: 0 2px 8px 0 rgba(240,165,0,0.10);
+        }
+        .avatar-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 8px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: box-shadow 0.2s;
+        }
+        .avatar-link:hover .avatar-circle {
+            box-shadow: 0 4px 16px 0 rgba(240,165,0,0.18);
+        }
+        .footer {
+            width: 100%;
+            max-width: none;
+            background: rgba(34,34,34,0.7);
+            color: #ccc;
+            padding: 32px 0 16px 0;
+            text-align: center;
+            font-size: 15px;
+            border-radius: 0;
+            box-shadow: 0 -2px 12px #18191a;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin: 0;
+        }
+        .footer span {
+            color: #f0a500;
+            font-weight: 700;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 32px;
+        }
+        .footer-box {
+            flex: 1 1 180px;
+            min-width: 160px;
+        }
+        .footer-box h3 {
+            color: #f0a500;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .footer-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-box ul li {
+            margin-bottom: 6px;
+        }
+        .footer-box a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-box a:hover {
+            color: #f0a500;
+            text-decoration: underline;
+        }
+        .step-icon {
+            background: #fff;
+            padding: 18px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 110px;
+        }
+        .footer-credit {
+            margin-top: 18px;
+            color: #888;
+            font-size: 15px;
+        }
+        .socials i {
+            margin-right: 6px;
+        }
+        @media (max-width: 1180px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 18px;
+            }
+            .featured-destinations, .steps-container {
+                flex-direction: column;
+                gap: 18px;
+            }
+            .destination-box, .step {
+                min-width: 95%;
+                max-width: 95%;
+            }
+            
+            /* Header responsywny */
+            .header {
+                padding: 16px 20px;
+                margin: 16px 20px 24px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+            }
+            
+            .header .logo {
+                font-size: 24px;
+            }
+            
+            /* Menu button - pokaż */
+            #menu-btn {
+                display: flex !important;
+                position: relative;
+                z-index: 1001;
+            }
+            
+            /* Navbar - ukryj domyślnie */
+            .navbar {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(34, 34, 34, 0.98);
+                backdrop-filter: blur(15px);
+                border-radius: 0 0 18px 18px;
+                border: 1px solid rgba(255,255,255,0.1);
+                box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+                flex-direction: column;
+                gap: 0;
+                padding: 24px 0;
+                z-index: 1000;
+                margin-top: 8px;
+            }
+            
+            /* Navbar aktywne */
+            .navbar.active {
+                display: flex !important;
+                animation: slideDown 0.3s ease-out;
+            }
+            
+            .navbar a {
+                padding: 14px 24px;
+                font-size: 17px;
+                border-bottom: 1px solid rgba(255,255,255,0.08);
+                transition: all 0.3s ease;
+                margin: 0;
+                text-align: center;
+            }
+            
+            .navbar a:last-child {
+                border-bottom: none;
+            }
+            
+            .navbar a:hover {
+                background: rgba(240,165,0,0.15);
+                padding-left: 32px;
+                transform: translateX(4px);
+            }
+            
+            .navbar .btn {
+                margin: 8px 20px 4px;
+                text-align: center;
+                display: block;
+            }
+            
+            .navbar form {
+                margin: 4px 0 0 0;
+                padding: 0;
+            }
+            
+            .navbar form .btn {
+                width: 100%;
+                margin: 0;
+                padding: 14px 24px;
+                font-size: 17px;
+                text-align: center;
+                display: block;
+                border: none;
+                background: transparent;
+                color: #fff;
+                transition: all 0.3s ease;
+                border-bottom: 1px solid rgba(255,255,255,0.08);
+            }
+            
+            .navbar form .btn:hover {
+                background: rgba(240,165,0,0.15);
+            }
+            
+            .navbar form:last-child .btn {
+                border-bottom: none;
+            }
+            
+            /* Avatar w menu */
+            .navbar .avatar-link {
+                justify-content: center;
+                padding: 12px 24px;
+                margin-bottom: 4px;
+            }
+            
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+        @media (max-width: 600px) {
+            .featured-destinations, .steps-container {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .destination-box, .step {
+                min-width: 90%;
+                max-width: 90%;
+                padding: 16px;
+                border-radius: 12px;
+                margin: 0 auto;
+            }
+            .logo {
+                font-size: 20px !important;
+            }
+            h2, h3 {
+                font-size: 1.2rem;
+            }
+            
+            .hero {
+                padding: 30px 16px !important;
+                margin: 0 16px 24px !important;
+            }
+            
+            .hero h1 {
+                font-size: 2rem !important;
+                line-height: 1.2;
+            }
+            
+            .hero h3 {
+                font-size: 1.1rem !important;
+            }
+            
+            .hero p {
+                font-size: 1rem !important;
+                padding: 0 8px;
+            }
+            
+            .header {
+                padding: 12px 16px;
+                margin: 12px 16px 20px;
+            }
+            
+            #menu-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+            
+            .navbar a {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+        }
+        @media (max-width: 400px) {
+            .destination-box, .step {
+                padding: 12px;
+                min-width: 85%;
+                max-width: 85%;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem !important;
+            }
+            
+            .hero h3 {
+                font-size: 1rem !important;
+            }
+            
+            .hero p {
+                font-size: 0.9rem !important;
+            }
+            
+            .logo {
+                font-size: 18px !important;
+            }
+            
+            .header {
+                padding: 10px 12px;
+                margin: 10px 12px 16px;
+            }
+            
+            #menu-btn {
+                width: 34px;
+                height: 34px;
+                font-size: 15px;
+            }
+            
+            .navbar a {
+                padding: 10px 16px;
+                font-size: 15px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+        
+        /* Menu button styles */
+        #menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 2px solid #f0a500;
+            border-radius: 8px;
+            color: #f0a500;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+        #menu-btn:hover {
+            background: rgba(240,165,0,0.1);
+            color: #fff;
+            border-color: #ff6a00;
+        }
+        #menu-btn.active {
+            background: #f0a500;
+            color: #232526;
+        }
+    </style>
 </head>
-<body>
-    <!-- ANIMOWANY WZÓR W TLE -->
-    <div class="bg-pattern">
-        <svg width="100%" height="100%">
-            <defs>
-                <linearGradient id="gold-gradient" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stop-color="#e6c97a" />
-                    <stop offset="100%" stop-color="#bfa14a" />
-                </linearGradient>
-            </defs>
-            <circle class="pattern-circle" cx="10%" cy="20%" r="120" fill="url(#gold-gradient)" opacity="0.08"/>
-            <circle class="pattern-circle" cx="80%" cy="80%" r="180" fill="url(#gold-gradient)" opacity="0.07"/>
-            <rect class="pattern-rect" x="60%" y="10%" width="200" height="200" rx="60" fill="url(#gold-gradient)" opacity="0.04"/>
-        </svg>
-    </div>
-
+<body class="modern-bg">
     <header class="header glass">
-        <div class="container nav-container">
-            <h1 class="logo">Pasieka</h1>
-            <nav class="navbar">
-                <ul class="nav-list">
-                    <li><a href="#products">Produkty</a></li>
-                    <li><a href="#gallery">Galeria</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
+        <a href="#" class="logo gradient-text">BoxPoint</a>
+        <button id="menu-btn" class="fas fa-bars" aria-label="Menu nawigacyjne" title="Otwórz menu"></button>
+        <nav class="navbar">
+            <a href="#home">Strona główna</a>
+            @if(Auth::check())
+                <a href="funkcje">Funkcje</a>
+            @endif
+            <a href="{{ route('onas') }}">O nas</a>
+            <a href="{{ route('kontakt') }}">Kontakt</a>
+            @php use Illuminate\Support\Facades\Auth; @endphp
+            @if(Auth::check())
+                <a href="{{ route('profile') }}" class="avatar-link" title="Twój profil">
+                    <img src="{{ Auth::user()->avatar ?? asset('images/default-avatar.png') }}" alt="Avatar użytkownika" class="avatar-circle">
+                </a>
+                <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+                    @csrf
+                    <button type="submit" class="btn btn-primary" style="margin-left:8px;">Wyloguj</button>
+                </form>
+            @else
+                <a href="{{ route('login') }}" class="btn btn-primary">Zaloguj się</a>
+                <a href="{{ route('register') }}" class="btn btn-secondary" style="margin-left:8px;">Zarejestruj się</a>
+            @endif
+        </nav>
     </header>
 
-    <main>
-        <!-- HERO Z DUŻYM ZDJĘCIEM -->
-        <section class="hero glass reveal">
-            <img class="hero-bg" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Pasieka" />
-            <div class="container hero-content">
-                <h2>Naturalny miód z przyszłości</h2>
-                <p>Najwyższa jakość prosto z ula do Twojego domu.</p>
-                <a href="#products" class="cta-btn">Zobacz ofertę</a>
-            </div>
-        </section>
-
-        <section class="section glass reveal" id="products">
-            <div class="container">
-                <h2>Nasze produkty</h2>
-                <div class="products">
-                    <div class="product">
-                        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Miód Wielokwiatowy">
-                        <h3>Miód Wielokwiatowy</h3>
-                    </div>
-                    <div class="product">
-                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Miód Lipowy">
-                        <h3>Miód Lipowy</h3>
-                    </div>
-                    <div class="product">
-                        <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Miód Akacjowy">
-                        <h3>Miód Akacjowy</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section glass reveal" id="gallery">
-            <div class="container">
-                <h2>Galeria</h2>
-                <div class="gallery">
-                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Pasieka wśród kwiatów">
-                    <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3c8b?auto=format&fit=crop&w=400&q=80" alt="Pszczoły przy pracy">
-                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Słoiki z miodem">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Ule w słońcu">
-                </div>
-            </div>
-        </section>
-
-        <section class="section glass reveal" id="contact">
-            <div class="container">
-                <h2>Kontakt</h2>
-                <p>Chcesz zamówić miód? Napisz do nas!</p>
-                <div class="contact-flex">
-                    <form class="contact-form">
-                        <input type="text" placeholder="Imię" required>
-                        <input type="email" placeholder="Email" required>
-                        <textarea placeholder="Wiadomość" required></textarea>
-                        <button type="submit">Wyślij</button>
-                    </form>
-                    <div class="contact-details">
-                        <div class="contact-row">
-                            <span class="contact-icon">📞</span>
-                            <a href="tel:123456789">123 456 789</a>
-                        </div>
-                        <div class="contact-row">
-                            <span class="contact-icon">✉️</span>
-                            <a href="mailto:kontakt@mrpasieka.pl">kontakt@mrpasieka.pl</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer glass reveal">
-        <div class="footer-container">
-            <p>&copy; 2050 MrPasieka</p>
-            <ul class="footer-links">
-                <li><a href="#products">Produkty</a></li>
-                <li><a href="#gallery">Galeria</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-            <button id="backToTop" title="Do góry">↑</button>
+    <section class="hero glass" id="home" style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:60vh; text-align:center;">
+        <h1 class="gradient-text" style="font-size:2.7rem; font-weight:800; margin-bottom:18px;">Bezpieczne. Szybkie. Automatyczne.</h1>
+        <h3 style="font-size:1.4rem; color:#f0a500; margin-bottom:12px;">Twoje paczki zawsze pod ręką</h3>
+        <p style="max-width:520px; margin:0 auto 18px; color:#ccc; font-size:1.13rem;">BoxPoint to przyszłość odbioru i nadawania przesyłek – bez kolejek i bez ograniczeń czasowych.</p>
+        <a href="#features" class="btn btn-primary" style="font-size:1.1em; padding:14px 38px; margin-bottom:10px;">Poznaj naszą ofertę</a>
+        <div style="margin-top:18px;">
         </div>
-    </footer>
-    <script src="script.js"></script>
+    </section>
+
+    <section class="featured-destinations" id="features">
+        <h2 class="section-title">Dlaczego BoxPoint?</h2>
+        <div class="destinations-container" style="display:flex; flex-wrap:wrap; gap:32px; justify-content:center;">
+            <div class="destination-box glass" style="min-width:220px; flex:1 1 260px;">
+                <img src="{{ asset('images/szafka-na-stacji-kolejowej.jpg') }}" alt="Skrytki 24/7" style="width:100%; height:auto; max-height:140px; object-fit:cover; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+                <div class="box-content">
+                    <h3>Dostęp 24/7</h3>
+                    <p>Odbieraj i nadaj paczki o dowolnej porze. Skrytki dostępne cały czas.</p>
+                </div>
+            </div>
+            <div class="destination-box glass" style="min-width:220px; flex:1 1 260px;">
+                <img src="{{ asset('images/kurier.jpg') }}" alt="Integracja z firmami kurierskimi" style="width:100%; height:auto; max-height:140px; object-fit:cover; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+                <div class="box-content">
+                    <h3>Integracja z kurierami</h3>
+                    <p>Współpracujemy z największymi operatorami. Odbiór bez stresu.</p>
+                </div>
+            </div>
+            <div class="destination-box glass" style="min-width:220px; flex:1 1 260px;">
+                <img src="{{ asset('images/bezpie.jpg') }}" alt="Bezpieczeństwo przesyłek" style="width:100%; height:auto; max-height:140px; object-fit:cover; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+                <div class="box-content">
+                    <h3>Bezpieczeństwo</h3>
+                    <p>System monitoringu i powiadomień SMS gwarantuje bezpieczeństwo Twojej paczki.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <h2 class="section-title">Jak to działa?</h2>
+        <div class="steps-container" style="display:flex; flex-wrap:wrap; gap:32px; justify-content:center;">
+            <div class="step glass" style="min-width:200px; flex:1 1 220px;">
+                <div class="step-icon">
+                    <img src="{{ asset('images/sing.png') }}" alt="Rejestracja" style="width:100%; height:auto; max-height:110px; object-fit:contain; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+                </div>
+                <h3>Zarejestruj się</h3>
+                <p>Załóż konto i wybierz dogodną lokalizację skrytki.</p>
+            </div>
+            <div class="step glass" style="min-width:200px; flex:1 1 220px;">
+                <div class="step-icon">
+                    <img src="{{ asset('images/nadaj.png') }}" alt="Nadawanie" style="width:100%; height:auto; max-height:110px; object-fit:contain; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+                </div>
+                <h3>Nadaj paczkę</h3>
+                <p>Zeskanuj kod i zostaw paczkę w wybranej skrytce.</p>
+            </div>
+            <div class="step glass" style="min-width:200px; flex:1 1 220px;">
+                <div class="step-icon">
+                    <img src="{{ asset('images/odbior.png') }}" alt="Odbiór" style="width:100%; height:auto; max-height:110px; object-fit:contain; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+                </div>
+                <h3>Odbierz paczkę</h3>
+                <p>Odbierz przesyłkę, kiedy chcesz — 24/7.</p>
+            </div>
+        </div>
+    </section>
+
+    @include('partials.footer')
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('#menu-btn');
+            const navbar = document.querySelector('.navbar');
+            const body = document.body;
+            
+            if (!menuBtn || !navbar) return;
+        
+            function toggleMenu() {
+                const isActive = navbar.classList.contains('active');
+                
+                if (!isActive) {
+               
+                    navbar.classList.add('active');
+                    menuBtn.classList.add('active');
+                    menuBtn.classList.remove('fa-bars');
+                    menuBtn.classList.add('fa-times');
+                    body.style.overflow = 'hidden'; 
+                } else {
+                   
+                    closeMenu();
+                }
+            }
+            
+            function closeMenu() {
+                navbar.classList.remove('active');
+                menuBtn.classList.remove('active');
+                menuBtn.classList.remove('fa-times');
+                menuBtn.classList.add('fa-bars');
+                body.style.overflow = ''; 
+            }
+         
+            menuBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleMenu();
+            });
+            
+         
+            const menuLinks = navbar.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                   
+                    setTimeout(closeMenu, 100);
+                });
+            });
+            
+         
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 1180 && navbar.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+            
+          
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && navbar.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+            
+          
+            document.addEventListener('click', function(e) {
+                const isClickInsideNav = navbar.contains(e.target);
+                const isClickOnMenuBtn = menuBtn.contains(e.target);
+                
+                if (!isClickInsideNav && !isClickOnMenuBtn && navbar.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
