@@ -1,170 +1,244 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BoxPoint – Nowoczesne skrytki paczkowe</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Miód od Ojca – Pasieka rodzinna | Naturalny miód prosto z ula</title>
+    <meta name="description" content="Rodzinna pasieka – świeży, naturalny miód z polskiej wsi. Miód wielokwiatowy, lipowy, rzepakowy. Zamów telefonicznie lub odbierz na miejscu." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <meta name="msvalidate.01" content="978D8FCE4CDA5EABDB9507C96C5FC2A2" />
-    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <meta property="og:title" content="Miód od Ojca – Pasieka rodzinna" />
+    <meta property="og:description" content="Naturalny miód prosto z pasieki. Skontaktuj się i zamów świeży miód." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pl_PL" />
 </head>
-<body class="modern-bg">
-    <header class="header glass">
-        <a href="#" class="logo gradient-text">BoxPoint</a>
-        <button id="menu-btn" class="fas fa-bars" aria-label="Menu nawigacyjne" title="Otwórz menu"></button>
-        <nav class="navbar">
+<body>
+    <header class="header">
+        <a href="#home" class="logo" aria-label="Strona główna – Miód od Ojca">
+            <span class="logo-mark">🍯</span>
+            <span class="logo-text">Miód od Ojca</span>
+        </a>
+        <button id="menu-btn" class="menu-btn" aria-label="Otwórz menu" title="Menu">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <nav class="navbar" aria-label="Główna nawigacja">
             <a href="#home">Strona główna</a>
-            <a href="funkcje.html">Funkcje</a>
-            <a href="onas.html">O nas</a>
-            <a href="kontakt.html">Kontakt</a>
-            <!-- Zmień linki poniżej jeśli masz logowanie/rejestrację -->
-            <a href="profile.html" class="avatar-link" title="Twój profil">
-                <img src="images/default-avatar.png" alt="Avatar użytkownika" class="avatar-circle">
-            </a>
-            <a href="login.html" class="btn btn-primary">Zaloguj się</a>
-            <a href="register.html" class="btn btn-secondary" style="margin-left:8px;">Zarejestruj się</a>
+            <a href="#products">Produkty</a>
+            <a href="#about">O pasiece</a>
+            <a href="#where">Gdzie kupić</a>
+            <a href="#contact">Kontakt</a>
         </nav>
     </header>
 
-    <section class="hero glass" id="home" style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:60vh; text-align:center;">
-        <h1 class="gradient-text" style="font-size:2.7rem; font-weight:800; margin-bottom:18px;">Bezpieczne. Szybkie. Automatyczne.</h1>
-        <h3 style="font-size:1.4rem; color:#f0a500; margin-bottom:12px;">Twoje paczki zawsze pod ręką</h3>
-        <p style="max-width:520px; margin:0 auto 18px; color:#ccc; font-size:1.13rem;">BoxPoint to przyszłość odbioru i nadawania przesyłek – bez kolejek i bez ograniczeń czasowych.</p>
-        <a href="#features" class="btn btn-primary" style="font-size:1.1em; padding:14px 38px; margin-bottom:10px;">Poznaj naszą ofertę</a>
-        <div style="margin-top:18px;"></div>
-    </section>
+    <main>
+        <!-- HERO -->
+        <section id="home" class="hero">
+            <div class="hero-inner">
+                <h1>
+                    <span class="serif">Naturalny miód</span>
+                    prosto z pasieki
+                </h1>
+                <p>Świeży, niepodgrzewany, zebrany z dbałością o pszczoły. Smak, który czuć od pierwszej łyżeczki.</p>
+                <div class="hero-actions">
+                    <a href="#products" class="btn btn-primary">Zobacz miody</a>
+                    <a href="#contact" class="btn btn-ghost">Zamów telefonicznie</a>
+                </div>
+            </div>
+            <div class="hero-bg" aria-hidden="true"></div>
+        </section>
 
-    <section class="featured-destinations" id="features">
-        <h2 class="section-title">Dlaczego BoxPoint?</h2>
-        <div class="destinations-container" style="display:flex; flex-wrap:wrap; gap:32px; justify-content:center;">
-            <div class="destination-box glass" style="min-width:220px; flex:1 1 260px;">
-                <img src="images/szafka-na-stacji-kolejowej.jpg" alt="Skrytki 24/7" style="width:100%; height:auto; max-height:140px; object-fit:cover; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.10);">
-                <div class="box-content">
-                    <h3>Dostęp 24/7</h3>
-                    <p>Odbieraj i nadaj paczki o dowolnej porze. Skrytki dostępne cały czas.</p>
-                </div>
+        <!-- PRODUCTS -->
+        <section id="products" class="section">
+            <div class="section-head">
+                <h2 class="serif">Nasze miody</h2>
+                <p>Sprawdzone smaki w słoikach 450 g i 900 g. Pytaj o dostępność sezonową.</p>
             </div>
-            <div class="destination-box glass" style="min-width:220px; flex:1 1 260px;">
-                <img src="images/kurier.jpg" alt="Integracja z firmami kurierskimi" style="width:100%; height:auto; max-height:140px; object-fit:cover; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.10);">
-                <div class="box-content">
-                    <h3>Integracja z kurierami</h3>
-                    <p>Współpracujemy z największymi operatorami. Odbiór bez stresu.</p>
-                </div>
+            <div class="cards">
+                <article class="card">
+                    <div class="card-media" style="--bg:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop');"></div>
+                    <div class="card-body">
+                        <h3>Miód wielokwiatowy</h3>
+                        <p>Łagodny, uniwersalny, idealny do codziennego słodzenia i na odporność.</p>
+                        <div class="pill-row"><span class="pill">450 g</span><span class="pill">900 g</span></div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-media" style="--bg:url('https://images.unsplash.com/photo-1526045478516-99145907023c?q=80&w=1200&auto=format&fit=crop');"></div>
+                    <div class="card-body">
+                        <h3>Miód lipowy</h3>
+                        <p>Aromatyczny, ceniony przy przeziębieniach. Wyraźny smak lata.</p>
+                        <div class="pill-row"><span class="pill">450 g</span><span class="pill">900 g</span></div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-media" style="--bg:url('https://images.unsplash.com/photo-1542834759-241c28a17090?q=80&w=1200&auto=format&fit=crop');"></div>
+                    <div class="card-body">
+                        <h3>Miód rzepakowy</h3>
+                        <p>Jasny, szybko krystalizuje. Delikatny, świetny do deserów.</p>
+                        <div class="pill-row"><span class="pill">450 g</span><span class="pill">900 g</span></div>
+                    </div>
+                </article>
             </div>
-            <div class="destination-box glass" style="min-width:220px; flex:1 1 260px;">
-                <img src="images/bezpie.jpg" alt="Bezpieczeństwo przesyłek" style="width:100%; height:auto; max-height:140px; object-fit:cover; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.10);">
-                <div class="box-content">
-                    <h3>Bezpieczeństwo</h3>
-                    <p>System monitoringu i powiadomień SMS gwarantuje bezpieczeństwo Twojej paczki.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="how-it-works" id="how-it-works">
-        <h2 class="section-title">Jak to działa?</h2>
-        <div class="steps-container" style="display:flex; flex-wrap:wrap; gap:32px; justify-content:center;">
-            <div class="step glass" style="min-width:200px; flex:1 1 220px;">
-                <div class="step-icon">
-                    <img src="images/sing.png" alt="Rejestracja" style="width:100%; height:auto; max-height:110px; object-fit:contain; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.10);">
-                </div>
-                <h3>Zarejestruj się</h3>
-                <p>Załóż konto i wybierz dogodną lokalizację skrytki.</p>
+        <!-- BENEFITS -->
+        <section class="section alt">
+            <div class="section-head">
+                <h2 class="serif">Dlaczego nasz miód?</h2>
             </div>
-            <div class="step glass" style="min-width:200px; flex:1 1 220px;">
-                <div class="step-icon">
-                    <img src="images/nadaj.png" alt="Nadawanie" style="width:100%; height:auto; max-height:110px; object-fit:contain; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.10);">
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🌿</div>
+                    <h3>100% naturalny</h3>
+                    <p>Bez podgrzewania i bez dodatków. Zachowuje pełnię wartości.</p>
                 </div>
-                <h3>Nadaj paczkę</h3>
-                <p>Zeskanuj kod i zostaw paczkę w wybranej skrytce.</p>
-            </div>
-            <div class="step glass" style="min-width:200px; flex:1 1 220px;">
-                <div class="step-icon">
-                    <img src="images/odbior.png" alt="Odbiór" style="width:100%; height:auto; max-height:110px; object-fit:contain; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.10);">
+                <div class="feature">
+                    <div class="feature-icon">🏡</div>
+                    <h3>Rodzinna pasieka</h3>
+                    <p>Mała skala, duża troska o pszczoły i jakość każdej partii.</p>
                 </div>
-                <h3>Odbierz paczkę</h3>
-                <p>Odbierz przesyłkę, kiedy chcesz — 24/7.</p>
+                <div class="feature">
+                    <div class="feature-icon">🚜</div>
+                    <h3>Prosto od pszczelarza</h3>
+                    <p>Odbiór na miejscu lub dostawa w okolicy – bez pośredników.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-box">
-                <h3>BoxPoint</h3>
-                <ul>
-                    <li><a href="#features">Dlaczego my?</a></li>
-                    <li><a href="#how-it-works">Jak działa?</a></li>
-                </ul>
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <div class="about">
+                <div class="about-text">
+                    <h2 class="serif">O pasiece</h2>
+                    <p>Pasieka rodzinna prowadzona z pasją od lat. Dbamy o zdrowie rodzin pszczelich i różnorodność pożytków. Zbieramy miód w kilku terminach w roku, abyś mógł cieszyć się naturalnym smakiem różnych odmian.</p>
+                    <ul class="checklist">
+                        <li>Mała, rzemieślnicza produkcja</li>
+                        <li>Regularne badania jakości</li>
+                        <li>Szacunek dla pszczół i natury</li>
+                    </ul>
+                </div>
+                <div class="about-media" aria-hidden="true"></div>
             </div>
-            <div class="footer-box">
-                <h3>Kontakt</h3>
-                <ul>
-                    <li><a href="mailto:kontakt@boxpoint.pl">kontakt@boxpoint.pl</a></li>
-                </ul>
+        </section>
+
+        <!-- WHERE TO BUY -->
+        <section id="where" class="section alt">
+            <div class="section-head">
+                <h2 class="serif">Gdzie kupić</h2>
+                <p>Zapraszamy do sklepiku przy pasiece lub punktów sprzedaży w okolicy.</p>
             </div>
+            <div class="where-grid">
+                <div class="map-wrap">
+                    <iframe title="Mapa dojazdu" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Polska%2C%20Twoja%20Pasieka&output=embed"></iframe>
+                </div>
+                <div class="where-list">
+                    <div class="place">
+                        <h3>Sklepik przy pasiece</h3>
+                        <p><strong>Adres:</strong> [Wpisz ulicę i miejscowość]</p>
+                        <p><strong>Godziny:</strong> Sob–Ndz 10:00–15:00 (lub po kontakcie telefonicznym)</p>
+                    </div>
+                    <div class="place">
+                        <h3>Kiermasz lokalny</h3>
+                        <p><strong>Miejsce:</strong> [Targ w Twoim mieście]</p>
+                        <p><strong>Termin:</strong> [np. każda sobota]</p>
+                    </div>
+                    <div class="note">Masz sklep i chcesz sprzedawać nasz miód? <a href="#contact">Napisz do nas</a>.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact" class="footer">
+        <div class="footer-grid">
+            <div>
+                <h3 class="serif">Kontakt</h3>
+                <p class="lead">Pasieka: <strong>[nazwa pasieki]</strong></p>
+                <p>Telefon: <a href="tel:+48XXXXXXXXX" class="link">+48 XXX XXX XXX</a></p>
+                <p>E‑mail: <a href="mailto:kontakt@twojapasieka.pl" class="link">kontakt@twojapasieka.pl</a></p>
+                <p>Adres: <span>[ulica, miejscowość]</span></p>
+            </div>
+            <form id="contact-form" class="contact-form" aria-label="Formularz kontaktowy">
+                <div class="row">
+                    <label>
+                        <span>Imię</span>
+                        <input type="text" name="name" placeholder="Twoje imię" required />
+                    </label>
+                    <label>
+                        <span>E‑mail</span>
+                        <input type="email" name="email" placeholder="np. jan@domena.pl" required />
+                    </label>
+                </div>
+                <div class="row">
+                    <label>
+                        <span>Telefon (opcjonalnie)</span>
+                        <input type="tel" name="phone" placeholder="np. 600 000 000" />
+                    </label>
+                </div>
+                <label class="full">
+                    <span>Wiadomość</span>
+                    <textarea name="message" rows="4" placeholder="Napisz czego potrzebujesz" required></textarea>
+                </label>
+                <label class="consent">
+                    <input type="checkbox" required />
+                    <span>Wyrażam zgodę na kontakt w sprawie mojego zapytania.</span>
+                </label>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Wyślij</button>
+                    <small class="hint">Klikając „Wyślij” akceptujesz przetwarzanie danych tylko w celu kontaktu.</small>
+                </div>
+            </form>
         </div>
-        <div class="footer-credit">
-            &copy; 2025 BoxPoint. Wszelkie prawa zastrzeżone.
+        <div class="footer-bottom">
+            <div>© <span id="year"></span> Miód od Ojca • Wszystkie prawa zastrzeżone</div>
+            <a class="link" href="#home">Do góry ↑</a>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuBtn = document.querySelector('#menu-btn');
-            const navbar = document.querySelector('.navbar');
+        // Mobile menu
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('menu-btn');
+            const nav = document.querySelector('.navbar');
             const body = document.body;
-            if (!menuBtn || !navbar) return;
-            function toggleMenu() {
-                const isActive = navbar.classList.contains('active');
-                if (!isActive) {
-                    navbar.classList.add('active');
-                    menuBtn.classList.add('active');
-                    menuBtn.classList.remove('fa-bars');
-                    menuBtn.classList.add('fa-times');
-                    body.style.overflow = 'hidden';
-                } else {
-                    closeMenu();
-                }
-            }
-            function closeMenu() {
-                navbar.classList.remove('active');
-                menuBtn.classList.remove('active');
-                menuBtn.classList.remove('fa-times');
-                menuBtn.classList.add('fa-bars');
+            function closeMenu(){
+                nav.classList.remove('active');
                 body.style.overflow = '';
             }
-            menuBtn.addEventListener('click', function(e) {
+            btn?.addEventListener('click', (e) => {
                 e.preventDefault();
-                e.stopPropagation();
-                toggleMenu();
+                nav.classList.toggle('active');
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!expanded));
+                body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
             });
-            const menuLinks = navbar.querySelectorAll('a');
-            menuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    setTimeout(closeMenu, 100);
-                });
-            });
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 1180 && navbar.classList.contains('active')) {
-                    closeMenu();
-                }
-            });
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && navbar.classList.contains('active')) {
-                    closeMenu();
-                }
-            });
-            document.addEventListener('click', function(e) {
-                const isClickInsideNav = navbar.contains(e.target);
-                const isClickOnMenuBtn = menuBtn.contains(e.target);
-                if (!isClickInsideNav && !isClickOnMenuBtn && navbar.classList.contains('active')) {
-                    closeMenu();
-                }
-            });
+            nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setTimeout(closeMenu, 80)));
+            window.addEventListener('resize', () => { if (window.innerWidth > 1200) closeMenu(); });
+        });
+
+        // Dynamic year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Simple mailto fallback for contact form
+        const form = document.getElementById('contact-form');
+        form?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const data = new FormData(form);
+            const name = encodeURIComponent(data.get('name') || '');
+            const email = encodeURIComponent(data.get('email') || '');
+            const phone = encodeURIComponent(data.get('phone') || '');
+            const message = encodeURIComponent(data.get('message') || '');
+            const subject = `Zapytanie ze strony – ${decodeURIComponent(name)}`;
+            const body = `Imię: ${decodeURIComponent(name)}%0AEmail: ${decodeURIComponent(email)}%0ATelefon: ${decodeURIComponent(phone)}%0A%0AWiadomość:%0A${decodeURIComponent(message)}`;
+            const mail = `mailto:kontakt@twojapasieka.pl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mail;
+            form.reset();
         });
     </script>
 </body>
